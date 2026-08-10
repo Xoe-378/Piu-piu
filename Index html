@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sorry Pihuu ❤️</title>
+<style>
+body{
+  margin:0;height:100vh;
+  display:flex;justify-content:center;align-items:center;
+  background:pink;font-family:Arial;text-align:center;
+}
+button{
+  background:red;color:white;border:0;
+  padding:25px 40px;border-radius:50px;
+  font-size:25px;font-weight:bold;
+}
+#msg{display:none;color:red;font-size:40px;font-weight:bold}
+</style>
+</head>
+<body>
+
+<div id="box">
+  <button onclick="sorry()">Tap to Open ❤️</button>
+</div>
+
+<script>
+function sorry(){
+  document.getElementById("box").innerHTML =
+  '<div id="msg" style="display:block">Sorry Pihuu 🥺❤️</div>';
+}
+</script>
+
+</body>
+</html>
