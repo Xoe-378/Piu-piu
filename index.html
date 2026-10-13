@@ -37,12 +37,9 @@ input{width:100%;padding:15px 17px;border:1px solid #ffabd0;border-radius:14px;b
 .plate{position:absolute;width:86%;height:40px;left:7%;bottom:22px;border-radius:50%;background:linear-gradient(#fff5fc,#ffb4d6 60%,#b13a72);box-shadow:0 12px 20px #26001366, inset 0 3px 6px white}
 .plate:after{content:"";position:absolute;inset:5px 12px;border-radius:50%;border:1px solid #ffffffa6}
 .cake3d{position:absolute;left:50%;bottom:47px;transform:translateX(-50%) rotateX(2deg);width:min(78%,285px);height:220px;filter:drop-shadow(0 16px 9px #25001480);cursor:pointer;transform-style:preserve-3d;transition:filter .3s}
-.cake-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:20px;z-index:2;border:3px solid #ffd3e6;box-shadow:0 8px 25px #20000e88}
 .cake3d .cake-writing{z-index:5;top:auto;bottom:13px;left:8%;right:8%;padding:7px 4px;border-radius:12px;background:#580622b8;color:#fff5fb;text-shadow:0 2px 5px #24000e;backdrop-filter:blur(3px)}
 .cake3d .candle{z-index:6;top:-7px;left:49%}
 .cake3d .cutline{z-index:7;top:15px;height:180px;left:50%;border-left:4px solid #fff0f7;filter:drop-shadow(0 0 5px #fff)}
-.cake3d.cut .cake-photo{clip-path:polygon(0 0,49% 0,44% 45%,53% 100%,0 100%)}
-.cake3d.cut .cake-top,.cake3d.cut .cake-body,.cake3d.cut .frosting-drips{opacity:.18}
 .cake-body{position:absolute;left:0;right:0;bottom:0;height:142px;border-radius:13px 13px 19px 19px;background:linear-gradient(90deg,#35110e 0%,#6b2b20 12%,#9d4a31 25%,#4a1c17 44%,#8b3b2b 61%,#3a1512 80%,#6d2b20 100%);border-bottom:13px solid #32100e;box-shadow:inset 0 10px 0 #c77a59,inset 0 -8px 0 #1e0808}
 .cake-body:before{content:"";position:absolute;top:31px;left:0;right:0;height:13px;background:linear-gradient(#ffd2e5,#f68ab7 45%,#8f1f4c);box-shadow:0 3px 0 #2f0e0d}
 .cake-top{position:absolute;top:30px;left:-1%;width:102%;height:57px;border-radius:50%;background:radial-gradient(ellipse at 40% 35%,#ad6854 0%,#783b2e 43%,#37130f 100%);border:5px solid #ffafd0;box-shadow:inset 0 4px 8px #f5b1a1,0 4px 0 #551b18;z-index:2}
@@ -56,6 +53,8 @@ input{width:100%;padding:15px 17px;border:1px solid #ffabd0;border-radius:14px;b
 .knife .handle{position:absolute;top:72px;left:25px;width:37px;height:52px;border-radius:10px 10px 13px 13px;background:linear-gradient(90deg,#33051d,#a40c51 30%,#ff6bb0 52%,#760637);border:2px solid #ffb7d7;box-shadow:inset 0 0 0 3px #5d052e}
 .knife .handle:after{content:"";position:absolute;top:12px;left:6px;right:6px;height:3px;background:#ffb4d5;box-shadow:0 12px #ffb4d5,0 24px #ffb4d5}
 .cake3d.cut .cake-top{transform:rotate(-10deg) translate(-13px,-10px);transform-origin:left bottom}
+.cake3d.cut:after{content:"";position:absolute;z-index:4;left:48%;top:44px;width:20px;height:126px;background:linear-gradient(90deg,#2a0d0b,#d9a18a 22%,#f0c7ad 48%,#5b2019 75%,#2a0d0b);clip-path:polygon(35% 0,100% 4%,80% 100%,0 96%);transform:translate(15px,-7px) rotate(8deg);filter:drop-shadow(4px 6px 4px #16000688);animation:sliceReveal .7s ease-out both}
+@keyframes sliceReveal{from{opacity:0;transform:translate(-4px,12px) rotate(0)}to{opacity:1;transform:translate(15px,-7px) rotate(8deg)}}
 .cake3d.cut .cake-body{background:linear-gradient(90deg,#32100d,#733020 18%,#d2a08b 19%,#4a1b15 25%,#8d3b2a 60%,#32100d)}
 .cutline{display:none;position:absolute;z-index:6;left:49%;top:54px;height:128px;border-left:4px solid #ffd8e8;transform:rotate(8deg);filter:drop-shadow(0 0 5px white)}
 .cake3d.cut .cutline{display:block}
@@ -71,10 +70,10 @@ input{width:100%;padding:15px 17px;border:1px solid #ffabd0;border-radius:14px;b
 .balloon i{position:absolute;top:56px;left:21px;width:1px;height:100px;background:#ffe7f2a6}
 .spark{position:fixed;z-index:40;pointer-events:none;font-size:22px;animation:burst 1.4s ease-out forwards}
 .note{position:relative;text-align:left;background:#fff8fc;color:#762448;border-radius:10px;padding:35px 24px 25px;box-shadow:0 15px 35px #21001155;transform:rotate(-.7deg);border:1px solid #ffc0dc}
-.heart-page .panel{width:min(100%,560px);min-height:500px;padding:clamp(85px,16vw,115px) clamp(25px,7vw,48px) clamp(75px,14vw,100px);border:0;border-radius:0;background:linear-gradient(145deg,#a71960f2,#6e0738f5 68%,#4b0326f7);clip-path:polygon(50% 96%,45% 92%,10% 62%,3% 48%,1% 36%,5% 22%,16% 11%,29% 9%,40% 15%,50% 27%,60% 15%,71% 9%,84% 11%,95% 22%,99% 36%,97% 48%,90% 62%,55% 92%);filter:drop-shadow(0 20px 30px #21001170);box-shadow:none;backdrop-filter:none}
-.heart-page .note{margin:18px auto 0;max-width:390px;padding:29px 19px 22px}
-.heart-page .navrow{margin-top:15px}
-@media(max-width:390px){.heart-page .panel{min-height:470px;padding:75px 24px 70px}.heart-page .note{padding:27px 15px 19px}.cake3d{width:min(83%,280px);height:200px}}
+.note-page .panel{width:min(100%,540px)}
+.note-page .note{margin:18px auto 0;max-width:390px;padding:29px 19px 22px}
+.note-page .navrow{margin-top:15px}
+@media(max-width:390px){.note-page .note{padding:27px 15px 19px}.cake3d{width:min(83%,280px);height:200px}}
 .note:before{content:"";position:absolute;top:0;left:0;right:0;height:9px;border-radius:10px 10px 0 0;background:repeating-linear-gradient(135deg,#ff6eb0 0 10px,#fff4fa 10px 20px)}
 .note .hand{font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.1rem,4.5vw,1.35rem);line-height:1.8;color:#762448}
 .note .sign{display:block;text-align:right;margin-top:17px;color:#d92d7a;font-weight:800;font-size:.9rem}
@@ -116,7 +115,6 @@ input{width:100%;padding:15px 17px;border:1px solid #ffabd0;border-radius:14px;b
  <div class="eyebrow">Birthday mini game · level 1</div><h2>Cut the cake, Piu Piu! 🍫</h2><p>Drag the knife across the cake to make a slice. You’ve got this! ✨</p>
  <div class="cake-stage" id="cakeStage"><div class="plate"></div>
   <div class="cake3d" id="cake3d" role="img" aria-label="Realistic chocolate birthday cake">
-   <img class="cake-photo" src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=900&q=88" alt="Real chocolate birthday cake" onerror="this.style.display='none'">
    <div class="cake-top"></div><div class="frosting-drips"></div><div class="cake-body"></div><div class="candle"><span class="flame" id="flame">🔥</span></div><div class="cake-writing">piu piu 💗</div><div class="cutline"></div>
   </div>
   <div class="knife" id="knife" role="button" tabindex="0" aria-label="Drag knife over cake to cut"><div class="blade"></div><div class="handle"></div></div>
@@ -129,12 +127,12 @@ input{width:100%;padding:15px 17px;border:1px solid #ffabd0;border-radius:14px;b
  <div class="popup-cake">🎂</div><div class="eyebrow">Wish granted ✨</div><h2>Happy Birthday<br>Pihu! 💗</h2><p>Let the sparkles fly and may your day be as sweet as this chocolate cake!</p><button class="btn" id="popupContinue">I have written something for you 💌</button>
 </div></div>
 
-<section class="screen heart-page" id="giftScreen"><div class="panel"><div class="eyebrow">A little something from me</div><div style="font-size:58px;animation:bob 1.5s infinite">💌</div><h2>I have written something for you</h2><p>Har page mein dil se likhi ek baat hai… 💗</p><button class="btn" id="claimGift">Read my words 💌</button></div></section>
+<section class="screen" id="giftScreen"><div class="panel"><div class="eyebrow">A little something from me</div><div style="font-size:58px;animation:bob 1.5s infinite">💌</div><h2>I have written something for you</h2><p>Har page mein dil se likhi ek baat hai… 💗</p><button class="btn" id="claimGift">Read my words 💌</button></div></section>
 
-<section class="screen heart-page" id="note1"><div class="panel"><div class="eyebrow">A note from my heart</div><div class="note"><div class="hand"><strong>Happiest birthday pihuu...! 💗</strong><br><br>Tum jitne bhi din mere sath thi wo mere life ka best moment hai.</div><span class="sign">— always wishing you well 💗</span></div><div class="navrow"><button class="btn" data-next="note2">Next page ➜</button></div></div></section>
-<section class="screen heart-page" id="note2"><div class="panel"><div class="eyebrow">One thing I understand</div><div class="note"><div class="hand">Mai janta hu ki tum mujhe time nhi de pati ho kyuki tum busy hoti ho. 💗</div><span class="sign">— I understand, Pihu</span></div><div class="navrow"><button class="ghost" data-next="note1">← Back</button><button class="btn" data-next="note3">Next page ➜</button></div></div></section>
-<section class="screen heart-page" id="note3"><div class="panel"><div class="eyebrow">What I feel</div><div class="note"><div class="hand">Maine aaj tak kabhi tumko dekha nhi hai lekin ek expectation hai ki tum bahot khubsurat ho, kyuki tumhara dil bahut saaf hai. 💗</div><span class="sign">— from the heart</span></div><div class="navrow"><button class="ghost" data-next="note2">← Back</button><button class="btn" data-next="finalScreen">One last page ➜</button></div></div></section>
-<section class="screen heart-page" id="finalScreen"><div class="panel"><div style="font-size:38px">✦ ✨ 💗 ✨ ✦</div><p class="final-sub">ONE MORE TIME, WITH LOVE</p><div class="final-title">Happiest<br>Birthday!!!</div><div style="font-size:30px;margin:15px">🎀 🎂 💝</div><p>Happiest birthday once again, Pihuu!<br>Always be happy and forgive me for all my mistakes. 💗</p><div class="navrow"><button class="ghost" id="restart">Replay the magic ↻</button></div></div></section>
+<section class="screen note-page" id="note1"><div class="panel"><div class="eyebrow">A note from my heart</div><div class="note"><div class="hand"><strong>Happiest birthday pihuu...! 💗</strong><br><br>Tum jitne bhi din mere sath thi wo mere life ka best moment hai.</div><span class="sign">— always wishing you well 💗</span></div><div class="navrow"><button class="btn" data-next="note2">Next page ➜</button></div></div></section>
+<section class="screen note-page" id="note2"><div class="panel"><div class="eyebrow">One thing I understand</div><div class="note"><div class="hand">Mai janta hu ki tum mujhe time nhi de pati ho kyuki tum busy hoti ho. 💗</div><span class="sign">— I understand, Pihu</span></div><div class="navrow"><button class="ghost" data-next="note1">← Back</button><button class="btn" data-next="note3">Next page ➜</button></div></div></section>
+<section class="screen note-page" id="note3"><div class="panel"><div class="eyebrow">What I feel</div><div class="note"><div class="hand">Maine aaj tak kabhi tumko dekha nhi hai lekin ek expectation hai ki tum bahot khubsurat ho, kyuki tumhara dil bahut saaf hai. 💗</div><span class="sign">— from the heart</span></div><div class="navrow"><button class="ghost" data-next="note2">← Back</button><button class="btn" data-next="finalScreen">One last page ➜</button></div></div></section>
+<section class="screen note-page" id="finalScreen"><div class="panel"><div style="font-size:38px">✦ ✨ 💗 ✨ ✦</div><p class="final-sub">ONE MORE TIME, WITH LOVE</p><div class="final-title">Happiest<br>Birthday!!!</div><div style="font-size:30px;margin:15px">🎀 🎂 💝</div><p>Happiest birthday once again, Pihuu!<br>Always be happy and forgive me for all my mistakes. 💗</p><div class="navrow"><button class="ghost" id="restart">Replay the magic ↻</button></div></div></section>
 
 <script>
 const $=s=>document.querySelector(s);const screens=[...document.querySelectorAll('.screen')];
